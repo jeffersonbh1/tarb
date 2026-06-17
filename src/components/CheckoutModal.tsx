@@ -298,7 +298,7 @@ export default function CheckoutModal({
               <button
                 onClick={() => {
                   const whatsappMessage = `Olá! Acabei de fazer um pedido na Tarb Sports! Pedido ID: ${finalizedOrder.id}, Valor total: R$ ${finalizedOrder.totalSum.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}, Nome: ${finalizedOrder.customerName}. Gostaria de confirmar!`;
-                  window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+                  window.open(`https://wa.me/5531989907000?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
                 }}
                 className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition text-center shadow-xs"
               >

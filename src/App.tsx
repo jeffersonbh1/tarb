@@ -8,7 +8,7 @@ import LoginModal from './components/LoginModal';
 import AdminDashboard from './components/AdminDashboard';
 import { Product, CartItem, Order, OrderAddress } from './types';
 import { INITIAL_PRODUCTS, INITIAL_ORDERS } from './data';
-import { ChevronLeft, ChevronRight, Award, Shirt, Flame, Zap, ShieldCheck, HelpCircle } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Award, Shirt, Flame, Zap, ShieldCheck, HelpCircle, MessageCircle } from 'lucide-react';
 
 export default function App() {
   // Products and Orders persistence states
@@ -442,10 +442,21 @@ export default function App() {
           {/* Col 2 */}
           <div className="space-y-2">
             <span className="font-bold text-gray-800">Atendimento ao Cliente</span>
-            <ul className="space-y-1">
-              <li>📍 Av. Paulista, 1200 - Bela Vista, São Paulo - SP</li>
+            <ul className="space-y-1.5">
+              <li>📍 Rua Capri 440, Bandeirantes, Belo Horizonte - MG</li>
               <li>📧 sup.atendimento@tarbsports.com.br</li>
-              <li>📞 Suporte Comercial: (11) 99999-9999 (Segunda a Sexta)</li>
+              <li>
+                <a
+                  href="https://wa.me/5531989907000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Tarb%20Sports!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-600 transition flex items-center justify-center md:justify-start gap-1.5 text-gray-600 font-semibold"
+                >
+                  <MessageCircle className="h-4 w-4 text-emerald-500 fill-emerald-500/10 shrink-0" />
+                  <span>WhatsApp: (31) 98990-7000</span>
+                </a>
+              </li>
+              <li>📞 Telefone: (11) 99999-9999 (Segunda a Sexta)</li>
             </ul>
           </div>
 
@@ -456,7 +467,7 @@ export default function App() {
               Ambiente Seguro de Teste
             </span>
             <p className="leading-relaxed text-[11px] text-gray-450 font-mono">
-              CNPJ: 14.502.164/0001-90<br />
+              CNPJ: 01.111.000/0001-00<br />
               Desenvolvido com alta fidelidade visual. Todos os dados, carrinhos, novos produtos criados e pedidos são persistidos de modo sandbox via LocalStorage para facilitar sua experimentação.
             </p>
           </div>
@@ -499,6 +510,21 @@ export default function App() {
         onClose={() => setIsLoginOpen(false)}
         onLoginSuccess={handleLoginSuccess}
       />
+
+      {/* Floating WhatsApp support action - Mobile optimized */}
+      <a
+        href="https://wa.me/5531989907000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Tarb%20Sports!"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white p-3.5 sm:p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 group animate-bounce"
+        aria-label="Fale conosco no WhatsApp"
+        title="Chamar no WhatsApp"
+      >
+        <MessageCircle className="h-6 w-6 stroke-[2.5]" />
+        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-out text-sm font-extrabold tracking-wide whitespace-nowrap hidden md:inline-block">
+          Fale Conosco
+        </span>
+      </a>
     </div>
   );
 }
