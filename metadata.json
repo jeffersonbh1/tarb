@@ -1,0 +1,6 @@
+{
+  "name": "Loja de Artigos Esportivos",
+  "description": "E-commerce de produtos esportivos com catálogo de camisetas de times, chuteiras e acessórios. Painel administrativo para gerenciar produtos, preços, frete e pedidos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
