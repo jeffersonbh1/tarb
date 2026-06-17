@@ -80,24 +80,24 @@ export default function ProductDetailModal({ product, onClose, onAddToCart }: Pr
     <div id="product-modal-backdrop" className="fixed inset-0 bg-black/60 z-50 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
       <div 
         id="product-modal-content"
-        className="relative bg-white w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row my-8"
+        className="relative bg-white w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col md:flex-row my-4 sm:my-8 max-h-[92vh] md:max-h-none overflow-y-auto md:overflow-y-visible"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 text-gray-500 bg-white/90 hover:bg-gray-100 hover:text-gray-900 rounded-full shadow-md transition"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 p-2 text-gray-500 bg-white/95 hover:bg-gray-100 hover:text-gray-900 rounded-full shadow-md transition"
         >
           <X className="h-5 w-5" />
         </button>
 
         {/* Product Image Section */}
-        <div className="w-full md:w-1/2 bg-gray-50 flex items-center justify-center p-8 border-r border-gray-100 relative">
+        <div className="w-full md:w-1/2 bg-gray-50 flex items-center justify-center p-4 sm:p-8 border-r border-gray-100 relative shrink-0">
           <img
             src={product.image}
             alt={product.name}
             referrerPolicy="no-referrer"
-            className="w-full max-h-[450px] object-contain rounded-lg shadow-sm"
+            className="w-full h-44 sm:h-64 md:h-full max-h-[220px] sm:max-h-[400px] md:max-h-[450px] object-contain rounded-lg"
           />
         </div>
 

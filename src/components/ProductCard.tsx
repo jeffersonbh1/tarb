@@ -115,19 +115,19 @@ export default function ProductCard({ product, onSelect, onAddToCartDirectly }: 
         <div className="mt-4 grid grid-cols-2 gap-2 md:hidden">
           <button
             onClick={() => onSelect(product)}
-            className="py-2 border border-gray-200 text-gray-700 text-xs font-semibold rounded-lg hover:bg-gray-50 flex items-center justify-center gap-1"
+            className="py-2.5 border border-gray-200 text-gray-700 text-xs font-bold rounded-xl hover:bg-gray-50 flex items-center justify-center gap-1 transition-all"
           >
             Detalhes
           </button>
           {product.stock > 0 ? (
             <button
               onClick={() => onAddToCartDirectly(product)}
-              className="py-2 bg-blue-600 text-white text-xs font-semibold rounded-xl hover:bg-blue-700 flex items-center justify-center gap-1 shadow-sm"
+              className="py-2.5 bg-blue-600 active:bg-blue-700 text-white text-xs font-bold rounded-xl hover:bg-blue-700 flex items-center justify-center gap-1 shadow-xs transition-all"
             >
               Comprar
             </button>
           ) : (
-            <span className="py-2 bg-gray-100 text-gray-400 text-xs font-semibold rounded-lg text-center">
+            <span className="py-2.5 bg-gray-100 text-gray-400 text-xs font-bold rounded-xl text-center flex items-center justify-center">
               Faltando
             </span>
           )}

@@ -39,16 +39,16 @@ export default function Navbar({
           {/* Logo */}
           <div 
             onClick={onGoToHome}
-            className="flex items-center space-x-2 cursor-pointer group"
+            className="flex items-center space-x-1.5 sm:space-x-2 cursor-pointer group"
           >
-            <div className="bg-blue-600 text-white p-2.5 rounded-xl group-hover:bg-blue-700 transition shadow-md shadow-blue-100">
-              <ShoppingBag className="h-6 w-6" />
+            <div className="bg-blue-600 text-white p-2 sm:p-2.5 rounded-xl group-hover:bg-blue-700 transition shadow-md shadow-blue-105">
+              <ShoppingBag className="h-5 w-5 sm:h-6 sm:w-6" />
             </div>
             <div className="flex flex-col">
-              <span className="font-sans font-extrabold text-xl tracking-tight text-gray-900 group-hover:text-blue-600 transition">
+              <span className="font-sans font-extrabold text-base sm:text-xl tracking-tight text-gray-900 group-hover:text-blue-600 transition">
                 Tarb <span className="text-blue-600 font-bold">Sports</span>
               </span>
-              <span className="text-[10px] font-mono text-gray-400 tracking-wider uppercase">Alta Performance</span>
+              <span className="text-[9px] sm:text-[10px] font-mono text-gray-400 tracking-wider uppercase">Alta Performance</span>
             </div>
           </div>
 
@@ -78,7 +78,7 @@ export default function Navbar({
           )}
 
           {/* Action Navigation Buttons */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-1.5 sm:space-x-4">
             
             {/* Store View Link inside Admin Panel */}
             {currentView === 'admin' && (

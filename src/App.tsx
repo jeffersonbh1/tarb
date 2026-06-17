@@ -270,23 +270,23 @@ export default function App() {
             
             {/* Promo Banner Slider block */}
             <section id="promo-hero-slider" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10">
-              <div className="relative rounded-3xl overflow-hidden aspect-[21/9] min-h-[300px] shadow-lg">
+              <div className="relative rounded-3xl overflow-hidden aspect-[4/3] xs:aspect-[16/9] md:aspect-[21/9] min-h-[340px] sm:min-h-[300px] shadow-lg">
                 {banners.map((ban, idx) => (
                   <div
                     key={idx}
-                    className={`absolute inset-0 flex flex-col justify-center p-8 sm:p-12 text-white bg-cover bg-center transition-all duration-1000 ease-in-out ${
+                    className={`absolute inset-0 flex flex-col justify-center p-6 sm:p-12 text-white bg-cover bg-center transition-all duration-1000 ease-in-out ${
                       idx === activeBannerIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
                     }`}
-                    style={{ backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.15) 100%), url(${ban.image})` }}
+                    style={{ backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.25) 100%), url(${ban.image})` }}
                   >
                     <div className="max-w-xl space-y-3 sm:space-y-4 animate-fade-in">
-                      <span className="inline-block bg-blue-600 text-[10px] uppercase tracking-widest font-extrabold px-3 py-1 rounded-full text-white">
+                      <span className="inline-block bg-blue-600 text-[9px] sm:text-[10px] uppercase tracking-widest font-extrabold px-2.5 py-0.5 sm:py-1 rounded-full text-white w-fit">
                         {ban.badge}
                       </span>
-                      <h2 className="text-3xl sm:text-4.5xl font-black tracking-tight leading-none text-white">
+                      <h2 className="text-2xl sm:text-4xl lg:text-4.5xl font-black tracking-tight leading-tight sm:leading-none text-white">
                         {ban.title}
                       </h2>
-                      <p className="text-sm sm:text-base text-gray-300 font-medium">
+                      <p className="text-xs sm:text-base text-gray-300 font-medium line-clamp-2 sm:line-clamp-none">
                         {ban.subtitle}
                       </p>
                       <button
@@ -295,7 +295,7 @@ export default function App() {
                           const el = document.getElementById('vitrine-produtos');
                           if (el) el.scrollIntoView({ behavior: 'smooth' });
                         }}
-                        className="inline-flex items-center space-x-1.5 px-6 py-3 bg-white hover:bg-blue-600 hover:text-white text-gray-900 font-extrabold text-xs uppercase tracking-wider rounded-xl transition duration-300 shadow-lg"
+                        className="inline-flex items-center space-x-1.5 px-5 py-2.5 sm:px-6 sm:py-3 bg-white hover:bg-blue-600 hover:text-white text-gray-900 font-extrabold text-xs uppercase tracking-wider rounded-xl transition duration-300 shadow-lg w-fit"
                       >
                         <span>{ban.cta}</span>
                         <ChevronRight className="h-4 w-4" />
@@ -305,13 +305,13 @@ export default function App() {
                 ))}
 
                 {/* Banner slider indicators dots */}
-                <div className="absolute bottom-5 left-8 sm:left-12 z-20 flex space-x-2">
+                <div className="absolute bottom-4 left-6 sm:left-12 z-20 flex space-x-2">
                   {banners.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => setActiveBannerIndex(idx)}
-                      className={`h-2.5 rounded-full transition-all ${
-                        idx === activeBannerIndex ? 'w-8 bg-blue-600' : 'w-2.5 bg-white/40'
+                      className={`h-2 rounded-full transition-all ${
+                        idx === activeBannerIndex ? 'w-6 bg-blue-600' : 'w-2 bg-white/40'
                       }`}
                       aria-label={`Slide ${idx + 1}`}
                     />

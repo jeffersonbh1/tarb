@@ -45,7 +45,8 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }: LoginMod
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-50 rounded-lg transition"
+          className="absolute top-4 right-4 p-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition z-10"
+          title="Fechar"
         >
           <X className="h-5 w-5" />
         </button>
@@ -108,13 +109,22 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }: LoginMod
               </div>
             </div>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm rounded-xl shadow-md hover:shadow-lg transition flex items-center justify-center gap-2"
-            >
-              <span>{loading ? 'Acessando...' : 'Entrar no Painel'}</span>
-            </button>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                type="button"
+                onClick={onClose}
+                className="w-full sm:w-auto sm:px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-xs uppercase tracking-wider rounded-xl transition text-center border border-gray-200"
+              >
+                Voltar para a Loja
+              </button>
+              <button
+                type="submit"
+                disabled={loading}
+                className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm rounded-xl shadow-md hover:shadow-lg transition flex items-center justify-center gap-2"
+              >
+                <span>{loading ? 'Acessando...' : 'Entrar no Painel'}</span>
+              </button>
+            </div>
           </form>
 
           {/* Guidelines box for evaluation of features */}
