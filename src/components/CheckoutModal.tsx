@@ -185,20 +185,21 @@ export default function CheckoutModal({
   };
 
   return (
-    <div id="checkout-modal-backdrop" className="fixed inset-0 bg-black/60 z-50 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
+    <div id="checkout-modal-backdrop" className="fixed inset-0 bg-black/60 z-50 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 overflow-hidden">
       <div 
         id="checkout-modal-content"
-        className="bg-white w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl flex flex-col my-8"
+        className="bg-white w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col max-h-[96vh] sm:max-h-[92vh] overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
-          <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+        <div className="px-5 py-3.5 sm:px-6 sm:py-4 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
+          <h2 className="text-base sm:text-lg font-bold text-gray-900 flex items-center gap-2">
             <span>{finalizedOrder ? 'Pedido Confirmado' : 'Finalizar sua Compra'}</span>
           </h2>
           <button 
             onClick={finalizedOrder ? handleCloseSuccess : onClose}
-            className="p-1.5 text-gray-400 hover:text-gray-650 rounded-lg"
+            className="p-1.5 text-gray-400 hover:text-gray-600 rounded-lg transition"
+            title="Fechar"
           >
             <X className="h-5 w-5" />
           </button>
@@ -206,7 +207,7 @@ export default function CheckoutModal({
 
         {/* Dynamic Success View */}
         {finalizedOrder ? (
-          <div className="p-6 sm:p-10 flex flex-col items-center text-center max-w-2xl mx-auto">
+          <div className="flex-1 p-5 sm:p-10 flex flex-col items-center text-center max-w-2xl mx-auto overflow-y-auto w-full">
             <div className="bg-blue-50 text-blue-600 p-4 rounded-full mb-5 animate-bounce">
               <CheckCircle className="h-14 w-14" />
             </div>
@@ -313,9 +314,9 @@ export default function CheckoutModal({
           </div>
         ) : (
           /* Checkout Forms */
-          <form onSubmit={handleSubmit} className="flex-1 flex flex-col md:flex-row overflow-hidden">
+          <form onSubmit={handleSubmit} className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden">
             {/* Left side: inputs */}
-            <div className="flex-1 p-6 space-y-6 overflow-y-auto max-h-[65vh] pr-4 border-r border-gray-150">
+            <div className="flex-1 p-4 sm:p-6 space-y-6 md:overflow-y-auto md:max-h-[calc(92vh-140px)] md:pr-4 border-b md:border-b-0 md:border-r border-gray-150">
               {/* Step 1: Personal Details */}
               <div className="space-y-4">
                 <h3 className="text-sm font-bold text-blue-600 uppercase tracking-widest font-mono flex items-center gap-1.5">
@@ -587,7 +588,7 @@ export default function CheckoutModal({
             </div>
 
             {/* Right side: Items Overview and pricing */}
-            <div className="w-full md:w-80 bg-gray-50 p-6 flex flex-col justify-between">
+            <div className="w-full md:w-80 bg-gray-50 p-4 sm:p-6 flex flex-col justify-between md:overflow-y-auto md:max-h-[calc(92vh-140px)] shrink-0">
               <div>
                 <h3 className="font-bold text-gray-900 border-b border-gray-200 pb-3 mb-4">Resumo da Compra</h3>
                 <div className="space-y-4 max-h-[220px] overflow-y-auto mb-4 pr-2">
